@@ -6,22 +6,37 @@
     <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.css">
 </head>
 <body>
-    <ul data-bind="foreach: catList">
-        <li data-bind="click: $parent.changeCurrentCat, text: name"></li>
-    </ul>
-    <div data-bind="with: currentCat">
-
-        <h2 data-bind="text: name"></h2>
-        <div data-bind="text: level"></div>
-        <div data-bind="text: clickCount"></div>
-        <img alt="cute cat" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}">
-        <div>
-            <h3>Nicknames:</h3>
-            <ul data-bind="foreach: nicknames">
-                <li data-bind="text: $data"></li>
+    <div class="container">
+        <div class="page-header">
+            <h1 class="text-center">Cat Clicker :3</h1>
+        </div>
+        <div class="col-xs-3">
+            <ul class="list-group" data-bind="foreach: catList">
+                <li class="list-group-item" data-bind="click: $parent.changeCurrentCat, text: name, css: { active: $parent.currentCat().name == $data.name}"></li>
             </ul>
         </div>
+        <div class="col-xs-9">
+            <div class="thumbnail" data-bind="with: currentCat">
+                <div class="row caption">
+                    <div class="text-left col-xs-6">
+                        <h2><span data-bind="text: name"></span> (<span class="text-primary" data-bind="text: clickCount"></span>)</h2>
+                        <h3 data-bind="text: level"></h3>
+                        
+                    </div>
+                    <div class="text-left col-xs-6">
+                        <h3>Nicknames:</h3>
+
+                    <ul data-bind="foreach: nicknames">
+                        <li data-bind="text: $data"></li>
+                    </ul>
+                    </div>
+                </div>
+                <img alt="cute cat" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}">
+   
+            </div>
+        </div>
     </div>
+
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/knockout/dist/knockout.js"></script>
     <script src="js/cat.js"></script>

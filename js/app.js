@@ -8,7 +8,7 @@ var ViewModel = function() {
       initialCats.forEach(function(catItem) {
         self.catList.push(new Cat(catItem));
       });
-      self.currentCat = ko.observable(self.catList()[0]);
+      self.currentCat(self.catList()[0])
     });
   };
 
