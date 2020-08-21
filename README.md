@@ -1,6 +1,6 @@
-ud989-cat-clicker-ko-starter
-============================
+# Cat Clicker
 
-## Cat Clicker!
+How many times can you click the cats?
 
-How many times can you click the cats? :D
+- Separation of Concerns: Model View ViewModel (MVVM) Design Pattern.
+- Organizational Framework: Knockout.js.
