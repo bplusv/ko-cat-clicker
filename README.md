@@ -1,4 +1,4 @@
-# Cat Clicker
+# KO Cat Clicker
 
 How many times can you click the cats?
 
